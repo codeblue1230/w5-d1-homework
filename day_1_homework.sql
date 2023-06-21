@@ -35,7 +35,7 @@ SELECT COUNT(staff_id)
 FROM rental
 WHERE staff_id = 1;
 
--- Question 6 (ASK ABOUT THIS IN AM HELP SESSION)
+-- Question 6
 -- How many different district names are there?
 SELECT COUNT(city_id), district
 FROM address
@@ -56,11 +56,15 @@ FROM customer
 WHERE last_name LIKE '%es' AND store_id = 1
 GROUP BY store_id;
 
--- Question 9 (Get help with this PROBLME 1st)
+-- Question 9
 -- How many payment amounts (4.99, 5.99, etc.) had a number of rentals above 250 for customers
 -- with ids between 380 and 430? (use group by and having > 250)
-SELECT * 
+SELECT COUNT(amount), amount
 FROM payment
+WHERE customer_id
+BETWEEN 380 and 430
+GROUP BY amount
+HAVING COUNT(amount) > 250;
 
 -- Question 10
 -- Within the film table, how many rating categories are there? And what rating has the most
